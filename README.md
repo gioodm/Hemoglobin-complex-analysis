@@ -6,8 +6,6 @@ This project analyzes the structural properties and interactions of the hemoglob
 ### Repository Contents
 - **`scripts/`**: Contains Python scripts used for the analysis.
 - **`data/`**: Includes input data files such as PDB and DSSP files.
-- **`results/`**: Stores output files and results from the analysis.
-- **`supplementary_materials/`**: Contains supplementary materials referenced in the study.
 - **`README.md`**: This readme file.
 
 ### Getting Started
@@ -36,36 +34,20 @@ This project analyzes the structural properties and interactions of the hemoglob
 2. Generate DSSP files for the full hemoglobin, all possible trimers, and each monomer using the DSSP program. Place these files in the `data/` directory.
 
 #### Running the Analysis
-1. **PDB Parsing**: Run the script to parse the PDB file and analyze interactions between residues:
+1. **PDB Parsing**: Run the script to parse the PDB file and analyse interactions between residues:
    ```sh
-   python scripts/pdb_parsing.py
+   python scripts/parsepdb.py    #HEME or MONO
    ```
-2. **DSSP Parsing**: Run the script to analyze the accessible surface area and identify interacting residues:
+2. **DSSP Parsing**: Run the script to analyse the accessible surface area and identify interacting residues:
    ```sh
-   python scripts/dssp_parsing.py
+   python scripts/parsedssp.py   #RASA or ASA
    ```
-3. **Protein-Protein Interaction Network**: Run the script to analyze the protein-protein interaction network:
+3. **Protein-Protein Interaction Network**: Run the script to analyse the protein-protein interaction network:
    ```sh
-   python scripts/protein_interaction_network.py
+   python scripts/network.py
    ```
-
-### Results
-The results of the analysis will be stored in the `results/` directory. This includes:
-- Lists of residues interacting with heme and oxygen atoms.
-- Surfaces of interaction between monomers.
-- Protein-protein interaction networks with metrics like betweenness centrality, node degree, and clustering coefficient.
 
 ### Visualization
 Use UCSF Chimera to visualize the 3D structures and interactions. Load the PDB files and view the interactions highlighted in the analysis.
 
-### Authors
-- Giorgia Del Missier, Department of Pharmacy and Biotechnology, University of Bologna
 
-### License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-
-### Acknowledgments
-- The PDB and DSSP resources for providing the structural data.
-- IntAct database for the protein interaction data.
-
-For more details, refer to the manuscript included in the repository. If you have any questions or need further assistance, please open an issue in the repository.
